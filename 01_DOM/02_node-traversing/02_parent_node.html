@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>02. 부모 노드 탐색</h1>
+  <p>
+    부모 노드를 탐색하려면 node.prototype.parentNode
+    텍스트 노드는 dom 트리의 최종단 노드인 리프 노드(leaf node)
+    이므로 부모가 텍스트 노드인 경우는 없다.
+  </p>
+
+  <script>
+    console.log("=========html=========");
+    console.log(document.documentElement);
+    console.log("=========head=========");
+    console.log(document.head);
+    console.log("=========body=========");
+    console.log(document.body);
+    console.log("=========head의 parentNode========="); /* head와 body의 부모 요소는 html 전체 이므로 html 코드 전체가 출력*/
+    console.log(document.head.parentNode);
+    console.log("=========body의 parentNode=========");
+    console.log(document.body.parentNode);
+  </script>
+
+  <ul id="lists">
+    <li class="coffe">커피</li>
+    <li class="coke">콜라</li>
+    <li class="milk">우유</li>
+  </ul>
+
+  <!--text는 부모 요소가 될 수 없음 태그로 감싸지 않기 때문에-->
+  <script>
+    const $coke = document.querySelector(".coke");
+    console.log($coke.parentNode);
+    console.log($coke.parentElement);
+  </script>
+</body>
+</html>
