@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>03. 노드 생성과 추가</h1>
+  <pre>
+    Document.prototype.createElement(tageName) : 
+    인수로 전달받은 태그 이름에 해당하는 요소 노드를 생성하여 반환
+
+    Document.prototype.createTextNode(text) : 
+    인수로 전달받은 텍스트 값으로 텍스트 노드를 생성하여 반환
+
+    Node.prototype.appendChild(childNode) : 
+    인수로 전달받은 노드를 appendChild 메서드를 호출한 노드의 마지막 자식 노드로 추가
+  </pre>
+  
+  <ul id="drink">
+    <li>커피</li>
+  </ul>
+  <script>
+    const $drink = document.getElementById('drink');
+
+    const $li = document.createElement('li');
+
+    $li.textContent = "콜라";
+
+    $drink.appendChild($li);
+    /* 드링크의 자식으로 li를 넣어준다      
+    예를 들어 레시피 사이트에 고객이 직접 재료를 추가할 수 있는 기능을 만들 때 사용할 수 있다.           */
+  </script>
+
+  <h3>복수의 노드 생성과 추가</h3>
+  <ul id="food">
+    <li>김치찌개</li>
+  </ul>
+
+  <script>
+    const $food = document.getElementById("food");
+
+    /* fragment - 가상의 돔 */
+    const $fragment = document.createDocumentFragment();
+    ["된장찌개", "고등어구이", "순대국"].forEach(menu =>{
+      /*                               배열을 하나씩 순서대로 넣어준다          */
+      const $li = document.createElement("li");
+      $li.textContent = menu;
+      $fragment.appendChild($li);
+    })
+
+    $food.appendChild($fragment);
+  </script>
+
+</body>
+</html>
