@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<body>
+  <!--<h1 id="btn">안녕하세요</h1>-->
+  <h1 id="message">안녕하세요</h1>
+
+
+  <button onclick="click1()">버튼1</button>
+  <button onclick="click2()">버튼2</button>
+  <button onclick="click3()">버튼3</button>
+
+  <button id="btn2">
+    버튼2
+  </button>
+
+  <script>
+    const $h1 = document.getElementById("message");
+
+    function click1(){
+      $h1.style.color = "red";
+    }
+    function click2(){
+      $h1.innerHTML = "hi";
+    }
+    function click3(){
+      alert("hihihihi");
+    }
+  
+     const $btn2 = document.getElementById("btn2");
+     const $msg = document.getElementById("message");
+     $btn2.addEventListener("click", function(){
+       $msg.textContent = "hi";
+     })
+  
+  </script>
+</body>
+</html>

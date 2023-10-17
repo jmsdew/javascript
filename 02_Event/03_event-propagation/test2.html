@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1 id="bt1">안녕하세요</h1>
+
+<input type="button" value="버튼1" onclick="document.querySelector('body').style.color='red';">
+<button onclick="click1()">버튼2</button>
+<button onclick="alert('hihihi')">버튼3</button>
+
+
+
+
+<script>
+  const $bt1 = document.getElementById("bt1");
+  function click1() {
+    $bt1.innerHTML= "Hi";
+  }
+</script>
+</body>
+</html>
